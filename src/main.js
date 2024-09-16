@@ -34,11 +34,7 @@ searchForm.addEventListener("submit", (event) => {
 		});
 	}
 
-	const loader = document.querySelector(".loader__overlay");
-	loader.classList.add("active");
-
 	getImagesPixabay(inputSearchValue).then((images) => {
-		loader.classList.remove("active");
 		showGallery(images)
 	});
 })

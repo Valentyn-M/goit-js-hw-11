@@ -1,5 +1,8 @@
 export const getImagesPixabay = (searchRequest) => {
 
+	const loader = document.querySelector(".loader__overlay");
+	loader.classList.add("active");
+
 	const searchParams = new URLSearchParams({
 		key: "1888761-41f12aec6f7b50c314bb89730",
 		q: searchRequest,
@@ -21,5 +24,8 @@ export const getImagesPixabay = (searchRequest) => {
 		.catch((error) => {
 			console.log(error);
 			return [];
+		})
+		.finally(() => {
+			loader.classList.remove("active");
 		});
 }
